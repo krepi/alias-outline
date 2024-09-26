@@ -1,0 +1,48 @@
+{
+  "games": {
+    "123": {
+      "chatHistory": [
+        {
+          "username": "Alice",
+          "message": "Hello everyone!"
+        },
+        {
+          "username": "Bob",
+          "message": "Let’s get started!"
+        },
+        {
+          "username": "Alice",
+          "message": "HelloTeam"
+        },
+        {
+          "username": "Alice",
+          "message": "I guess its a cat"
+        },
+        {
+          "username": "Bob",
+          "message": "We rock"
+        },
+        {
+          "username": "Alice",
+          "message": "cat not kitty"
+        }
+      ]
+    },
+    "456": {
+      "chatHistory": [
+        {
+          "username": "Charlie",
+          "message": "Good luck!"
+        },
+        {
+          "username": "Dave",
+          "message": "Thanks, Charlie!"
+        },
+        {
+          "username": "Alice",
+          "message": "aaa"
+        }
+      ]
+    }
+  }
+}
