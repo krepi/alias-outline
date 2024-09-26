@@ -1,31 +1,31 @@
 const gameChat = require('../services/gameChat');
 
-// Pobieranie historii czatu dla gry
+// Retrieving chat history for the game
 exports.getChatHistory = (req, res) => {
     const gameId = req.params.gameId;
     
-    // Tworzymy nową grę, jeśli nie istnieje
+    // Create a new game if it doesn't exist
     gameChat.createGame(gameId);
 
-    // Pobieramy historię czatu dla tej gry
+    // Retrieve the chat history for this game
     const chatHistory = gameChat.getChatHistoryForGame(gameId);
 
-    // Renderowanie widoku z wiadomościami czatu
+    // Render the view with the chat messages
     res.render('room', {
         gameId: gameId,
         messages: chatHistory,
-        currentUser: 'Alice' // Zakładamy, że Alice jest użytkownikiem
+        currentUser: 'Alice' // Assuming Alice is the current user
     });
 };
 
-// Dodawanie wiadomości do czatu
+// Adding a message to the chat
 exports.addMessage = (req, res) => {
     const { gameId } = req.params;
     const { username, message } = req.body;
 
-    // Dodajemy wiadomość do czatu gry
+    // Add the message to the game's chat
     gameChat.addMessageToGame(gameId, username, message);
 
-    // Przekierowanie z powrotem do pokoju gry
+    // Redirect back to the game room
     res.redirect(`/game/${gameId}`);
 };

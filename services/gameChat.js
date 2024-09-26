@@ -1,27 +1,27 @@
 const fs = require('fs');
 const path = require('path');
 
-// Ścieżka do pliku JSON z historią czatów
+// Path to the JSON file containing chat history
 const chatHistoryFilePath = path.join(__dirname, '../chatHistory.json');
 
-// Funkcja do odczytu pliku JSON
+// Function to load the JSON file
 function loadChatHistory() {
     const data = fs.readFileSync(chatHistoryFilePath, 'utf8');
     return JSON.parse(data);
 }
 
-// Funkcja do zapisywania zmian w pliku JSON
+// Function to save changes to the JSON file
 function saveChatHistory(chatData) {
     fs.writeFileSync(chatHistoryFilePath, JSON.stringify(chatData, null, 2));
 }
 
-// Pobieranie historii czatu dla konkretnej gry
+// Retrieving the chat history for a specific game
 function getChatHistoryForGame(gameId) {
     const chatData = loadChatHistory();
     return chatData.games[gameId] ? chatData.games[gameId].chatHistory : [];
 }
 
-// Dodawanie nowej gry, jeśli nie istnieje
+// Creating a new game if it doesn't exist
 function createGame(gameId) {
     const chatData = loadChatHistory();
     
@@ -31,7 +31,7 @@ function createGame(gameId) {
     }
 }
 
-// Dodawanie wiadomości do czatu gry
+// Adding a message to the game's chat
 function addMessageToGame(gameId, username, message) {
     const chatData = loadChatHistory();
     

@@ -1,15 +1,15 @@
-// Przykład logiki gry - zarządzanie użytkownikami, punktami itp.
+// Example of game logic - managing users, scores, etc.
 
 let users = [];
 
-// Dodawanie użytkownika
+// Adding a user
 function addUser(username) {
     const user = { username, score: 0 };
     users.push(user);
     return user;
 }
 
-// Aktualizacja punktów
+// Updating the score
 function updateScore(username, points) {
     const user = users.find(u => u.username === username);
     if (user) {
@@ -17,7 +17,7 @@ function updateScore(username, points) {
     }
 }
 
-// Pobieranie użytkowników
+// Retrieving users
 function getUsers() {
     return users;
 }

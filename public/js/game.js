@@ -7,13 +7,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const message = messageInput.value.trim();
             
             if (message !== '') {
-                // Tymczasowe dodanie wiadomości do okna czatu
+                // Temporarily add the message to the chat window
                 const chatWindow = document.querySelector('.chat-messages');
                 chatWindow.innerHTML += `<p><strong>You:</strong> ${message}</p>`;
-                messageInput.value = '';  // Wyczyszczenie pola tekstowego
+                messageInput.value = '';  // Clear the text input field
             }
         });
     }
 });
+
+
 
 

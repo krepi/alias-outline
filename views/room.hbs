@@ -1,7 +1,7 @@
 <div class="game-room">
     <h2>Game Room - Chat for Game {{gameId}}</h2>
 
-    {{!-- Sekcja wyświetlania wiadomości zespołu --}}
+    {{!-- Section displaying team messages --}}
     <div class="chat-window">
         <h3>Chat History</h3>
         <div class="chat-messages">
@@ -11,10 +11,10 @@
         </div>
     </div>
 
-    {{!-- Okno czatu dla aktualnego użytkownika --}}
+    {{!-- Chat input for the current user --}}
     <div class="chat-input">
         <h4>Send a message as {{currentUser}}</h4>
-        <form action="/game/{{gameId}}/send" method="POST"> <!-- Używamy metody POST -->
+        <form action="/game/{{gameId}}/send" method="POST"> <!-- Using POST method -->
             <input type="text" name="message" placeholder="Type your message..." autocomplete="off">
             <input type="hidden" name="username" value="{{currentUser}}">
             <button type="submit">Send</button>

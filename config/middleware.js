@@ -2,10 +2,11 @@ const express = require('express');
 const path = require('path');
 
 module.exports = (app) => {
-    // Middleware do obsługi plików statycznych
+    // Middleware to serve static files
     app.use(express.static(path.join(__dirname, '../public')));
 
-    // Middleware do obsługi danych POST (formularzy)
+    // Middleware to handle POST data (forms)
     app.use(express.urlencoded({ extended: true }));
     app.use(express.json());
 };
+
