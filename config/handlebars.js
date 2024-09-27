@@ -8,7 +8,8 @@ module.exports = (app) => {
         helpers: {
             eq: function (a, b) {
                 return a === b;
-            }
+            },
+            or: (v1, v2) => v1 || v2,
         }
     }));
     app.set('view engine', 'hbs');
